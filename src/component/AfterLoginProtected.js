@@ -7,7 +7,7 @@ const AfterLogin = (props) => {
   useEffect(() => {
     let login = localStorage.getItem("accessToken");
     if (login) {
-      navigate("/subscribe");
+      navigate("/");
     }
   });
   return <Component></Component>;
