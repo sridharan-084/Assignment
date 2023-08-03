@@ -14,12 +14,13 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 
 // isme ye line change karniiii hai dhyn se ....//
-const PUBLIC_KEY = env.KEY;
+const PUBLIC_KEY =
+  "pk_test_51NaZvDSFW8Zg7PuTg5FtQOPTPnuweYyrt9elAJ0qwXhAwTzqh5zOwrlG356fmaRYbdTgkrwJRQF3ZSzxiDSJdwni00VLuE0est";
 
 const stripeTestPromise = loadStripe(PUBLIC_KEY);
 
 export function StripeContainer() {
-  console.log(PUBLIC_KEY);
+  console.log("key: ", PUBLIC_KEY);
   return (
     <Elements stripe={stripeTestPromise}>
       <Payment />
@@ -49,13 +50,16 @@ const Payment = () => {
         const { id } = paymentMethod;
         let email = localStorage.getItem("email");
         email = await JSON.parse(email);
-        const response = await axios.post("http://localhost:4000/payment", {
-          amount: 1000,
-          id,
-          userEmail: email,
-          card: card,
-          Package: Package,
-        });
+        const response = await axios.post(
+          "https://poised-ox-drawers.cyclic.cloud/payment",
+          {
+            amount: 1000,
+            id,
+            userEmail: email,
+            card: card,
+            Package: Package,
+          }
+        );
 
         if (response.data.success) {
           alert("Successful payment");

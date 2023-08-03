@@ -18,9 +18,12 @@ const CenteredDiv = () => {
         email = await JSON.parse(email);
         //console.log(email);
         console.log("details", email);
-        const result = await axios.post("http://localhost:4000/details", {
-          email: email,
-        });
+        const result = await axios.post(
+          "https://poised-ox-drawers.cyclic.cloud/details",
+          {
+            email: email,
+          }
+        );
         console.log(result.data.user[0]);
         await setData(result.data.user[0]);
         await setHide(false);
@@ -42,9 +45,12 @@ const CenteredDiv = () => {
       if (email) {
         email = JSON.parse(email);
         console.log("details", email);
-        const result = await axios.post("http://localhost:4000/cancelsub", {
-          email: email,
-        });
+        const result = await axios.post(
+          "https://poised-ox-drawers.cyclic.cloud/cancelsub",
+          {
+            email: email,
+          }
+        );
         //setData("");
         setData((prev) => {
           return { ...prev, subscribe: false };

@@ -28,11 +28,14 @@ const Registration = () => {
       if (formData.name.length === 0 || formData.email.length === 0) {
         alert("Fill all the details");
       }
-      const result = await axios.post("http://localhost:4000/signup", {
-        username: formData.name,
-        email: formData.email,
-        password: formData.password,
-      });
+      const result = await axios.post(
+        "https://poised-ox-drawers.cyclic.cloud/signup",
+        {
+          username: formData.name,
+          email: formData.email,
+          password: formData.password,
+        }
+      );
       console.log(result);
       // setFormData({
       //   name: "",

@@ -28,10 +28,13 @@ const Login = () => {
     e.preventDefault();
     try {
       console.log(formData);
-      const result = await axios.post("http://localhost:4000/login", {
-        email: formData.email,
-        password: formData.password,
-      });
+      const result = await axios.post(
+        "https://poised-ox-drawers.cyclic.cloud/login",
+        {
+          email: formData.email,
+          password: formData.password,
+        }
+      );
       console.log(result);
       localStorage.setItem("email", await JSON.stringify(result.data.email));
       localStorage.setItem(
