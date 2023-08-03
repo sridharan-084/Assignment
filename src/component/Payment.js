@@ -53,7 +53,7 @@ const Payment = () => {
         const response = await axios.post(
           "https://poised-ox-drawers.cyclic.cloud/payment",
           {
-            amount: 1000,
+            amount: card.price,
             id,
             userEmail: email,
             card: card,
