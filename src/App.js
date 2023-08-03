@@ -19,7 +19,7 @@ function App() {
             path="/register"
             element={<AfterLogin Component={Registration} />}
           />
-          <Route path="/subscribe" element={<Protected Component={Home} />} />
+          <Route path="/" element={<Protected Component={Home} />} />
           <Route path="/payment" element={<Protected Component={Payment} />} />
           <Route path="/details" element={<Protected Component={Details} />} />
           <Route path="/test" element={<Test></Test>} />
