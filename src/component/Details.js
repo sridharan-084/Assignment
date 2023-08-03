@@ -126,7 +126,7 @@ const CenteredDiv = () => {
           <div className="col">
             <button
               className="btn btn-primary"
-              onClick={() => navigate("/subscribe")}
+              onClick={() => navigate("/")}
             >
               Choose Plan
             </button>
