@@ -48,7 +48,7 @@ const Login = () => {
         password: "",
         rememberMe: false, // Default value for "Remember Me" checkbox
       });
-      navigate("/subscribe");
+      navigate("/");
     } catch (error) {
       alert(error.response.data.message);
     }
